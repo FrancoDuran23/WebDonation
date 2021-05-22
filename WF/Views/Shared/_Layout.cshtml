@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WF</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<style>
+    .social-part .fab {
+        padding-right: 20px;
+    }
+
+    .navbar-nav {
+        margin-right: 30px;
+    }
+
+    .fa-facebook-square {
+        margin-right: 5px;
+    }
+
+    .fa-instagram {
+        margin-right: 5px;
+    }
+
+    .fa-map-marked-alt {
+        margin-right: 5px;
+    }
+
+    .fa-whatsapp {
+        margin-right: 5px;
+    }
+
+    .logo {
+        transition: transform .2s; /* Animation */
+    }
+
+
+        .logo:hover {
+            transform: scale(1.05);
+            transition: transform .2s;
+        }
+
+    .nav-item .active {
+        color: #f88f01;
+    }
+
+    .navigation-wrap {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .navbar-brand img {
+        height: 52px;
+        width: auto;
+        display: block;
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+    }
+
+    .navbar-toggler {
+        float: right;
+        border: none;
+        padding-right: 0;
+        margin-top: 20px;
+    }
+
+        .navbar-toggler:active,
+        .navbar-toggler:focus {
+            outline: none;
+        }
+
+    .navbar-dark .navbar-toggler-icon {
+        width: 24px;
+        height: 17px;
+        background-image: none;
+        position: relative;
+        border-bottom: 1px solid #000;
+        transition: all 300ms linear;
+    }
+
+        .navbar-dark .navbar-toggler-icon:after,
+        .navbar-dark .navbar-toggler-icon:before {
+            width: 24px;
+            position: absolute;
+            height: 1px;
+            background-color: #000;
+            top: 0;
+            left: 0;
+            content: '';
+            z-index: 2;
+            transition: all 300ms linear;
+        }
+
+        .navbar-dark .navbar-toggler-icon:after {
+            top: 8px;
+        }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+        transform: rotate(45deg);
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+        transform: translateY(8px) rotate(-45deg);
+    }
+
+    .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+        border-color: transparent;
+    }
+
+    .nav-link {
+        color: white !important;
+        font-weight: 500;
+        transition: all 200ms linear;
+    }
+
+    .nav-item {
+        padding: 10px;
+    }
+
+        .nav-item:hover .nav-link {
+            color: #005792 !important;
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        .nav-item.active .nav-link {
+            color: #005792 !important;
+        }
+
+    .nav-link {
+        position: relative;
+        padding: 5px 0 !important;
+        display: inline-block;
+    }
+
+    .nav-item:after {
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        content: '';
+        background-color: #005792;
+        opacity: 0;
+        transition: all 200ms linear;
+    }
+
+    .nav-item:hover:after {
+        bottom: 0;
+        opacity: 1;
+    }
+
+    .nav-item.active:hover:after {
+        opacity: 0;
+    }
+
+    .nav-item {
+        position: relative;
+        transition: all 200ms linear;
+    }
+
+        .nav-item .dropdown-menu {
+            transform: translate3d(0, 10px, 0);
+            visibility: hidden;
+            opacity: 0;
+            max-height: 0;
+            display: block;
+            padding: 0;
+            margin: 0;
+            transition: all 200ms linear;
+        }
+
+        .nav-item.show .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            max-height: 999px;
+            transform: translate3d(0, 0px, 0);
+        }
+
+    .dropdown-menu {
+        padding: 10px !important;
+        margin: 0;
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #005792;
+        background-color: #fcfaff;
+        border: none;
+        border-radius: 3px;
+        box-shadow: 0 5px 10px 0 rgb(33,33,33,0.15);
+        transition: all 200ms linear;
+    }
+
+    .dropdown-toggle::after {
+        display: none;
+    }
+
+    .dropdown-item {
+        padding: 3px 15px;
+        color: #212121;
+        border-radius: 2px;
+        transition: all 200ms linear;
+    }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            color: #fff;
+            background-color: rgb(255,66,66,0.6);
+        }
+</style>
+
+<body>
+    <header class="row   ">
+
+
+
+
+
+        <nav class="navbar	navbar-expand-md	navbar-dark	bg-dark col-md-12 col-sm-12">
+
+
+            <div class="col-md-4 col-sm-6">
+                <button style="margin-right: 18px;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle	navigation">
+                    <span style="color:#f88f01" class="navbar-toggler-icon"></span>
+                </button>
+                <div class="animate__animated animate__pulse">
+              
+                        <img src="..\images\logo.png" width="190" height="80" class="logo icono-pag " style="border-radius: 12px;">
+               
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="collapse	navbar-collapse col-md-7 col-sm-2" id="navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+                <ul class="navbar-nav	ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" onmouseover="this.style.color='#005792'" onmouseout="this.style.color='white'" data-toggle="collapse" data-target=".navbar-collapse.show">@Html.ActionLink("Home", "Index", "Home")</a>
+                    </li>
+
+
+
+                </ul>
+                <div class="social-part" data-toggle="collapse" data-target=".navbar-collapse.show">
+
+
+                    <a href="https://www.facebook.com/aranciahelados" target="_blank" style="color:black" onmouseover="this.style.color='#28527A'" onmouseout="this.style.color='black'">  <i class="fab fa-facebook-square" style="size: 7px;"></i></a>
+
+                    <a href="https://www.instagram.com/aranciahelados/?hl=es-la" target="_blank" style="color:black" onmouseover="this.style.color='#af0069'" onmouseout="this.style.color='black'"> <i class="fab fa-instagram" style="size: 7px;"></i> </a>
+
+
+                    <a href="https://api.whatsapp.com/send?phone=543884762569&data=AbsqGK12tKPUd0-TruHAgp4WjI681Z_ti2rFyzbJu_U-72dTyIkzXUS9oGQ7l5n5ptTDNEa1M1FkYgX43Pxuh6JyqHU1bOkOrl7pWjLz7FAXvSP9B04NjXAURDx5lM-V-6E&source=FB_Ads" target="_blank" style="color:black" onmouseover="this.style.color='#81b214'" onmouseout="this.style.color='black'"> <i class="fab fa-whatsapp" style="size: 7px;"></i> </a>
+
+
+
+
+                </div>
+            </div>
+
+
+        </nav>
+
+    </header>
+
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - DonationWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

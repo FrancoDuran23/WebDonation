@@ -1,0 +1,74 @@
+﻿@using Microsoft.Extensions.Options
+@inject IOptions<StripeSettings> Stripe
+<style>
+    .stripe-button{
+          color:dodgerblue,
+            
+          
+    }
+</style>
+<body>
+    <div class="container bg-white col-md-12">
+        <h2 style="font-size:100px ; color: dodgerblue ;margin-top:20px" class="text-center mt-6">
+            Donate now!
+        </h2>
+        <h1 style="font-size:40px ; color: darkblue ;margin-top:10px" class="text-center mt-6">
+            Today, more than half of the boys and girls in Argentina are poor. Let's reimagine a better future together.
+        </h1>
+        <div class="row justify-content-center">
+
+            <div class="card text-white bg-primary mb-3 col-md-3" style="max-width: 18rem; margin:10px">
+                
+                <div class="card-body">
+                    <h5 class="card-title">Why?</h5>
+                    <p class="card-text">
+                        BECAUSE BOYS AND GIRLS ALWAYS MATTER AND EVERY MINUTE COUNTS
+                    </p>
+                </div>
+            </div>
+            <div class="card text-white bg-primary mb-3 col-md-3" style="max-width: 18rem; margin:10px">
+        
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            Personal satisfaction
+                        </h5>
+                        <p class="card-text">
+                            THE FACT OF KNOWING THAT IN SOME WAY WE ARE HELPING TO SOLVE PROBLEMS IN THE ENVIRONMENT IN WHICH WE OPERATE AND TO MITIGATE THEIR ADVERSE EFFECTS.
+                        </p>
+                    </div>
+            </div>
+            <div class="card text-white bg-primary mb-3 col-md-3" style="max-width: 18rem; margin:10px">
+
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Social commitment
+                            </h5>
+                            <p class="card-text">
+                                THOUSANDS OF PEOPLE MAKE THE DECISION TO DONATE MONEY TO REINFORCE THEIR SOCIAL COMMITMENT.
+                            </p>
+                        </div>
+             </div>
+            </div>
+        <div style="justify-content-center">
+            <form action="/Home/Charge" method="POST" style="">
+              
+                 
+                    <h1 style="font-size:20px ; color: blue ;margin-top:10px" class="text-center mt-6">
+                        with donating 5 dollars you save a community of children
+                    </h1>
+           
+         
+                <br />
+                <div  class="justify-content-center" style="margin-left:780px" >
+                    <script src="//checkout.stripe.com/v3/checkout.js" class="stripe-button" data-keyboard="@Stripe.Value.PublisherKey"
+                            data-description="Donation" data-amount="500">
+
+                    </script>
+                </div>
+             
+            </form>
+        </div>
+                  
+                </div>
+</body>
+
